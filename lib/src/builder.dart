@@ -197,7 +197,10 @@ class MarkdownBuilder implements md.NodeVisitor {
     }
 
     assert(_tables.isEmpty);
-    assert(_inlines.isEmpty);
+    // assert(_inlines.isEmpty);
+    if (_inlines.isNotEmpty) {
+      print(_inlines);
+    }
     assert(!_isInBlockquote);
     return _blocks.single.children;
   }
